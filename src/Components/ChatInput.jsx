@@ -71,23 +71,22 @@ function ChatInput({ chatMessages, setChatMessage }) {
   });
 
   return (
-    <section className="flex gap-3 mt-5">
+    <section className="flex gap-2 px-1 md:gap-3">
       <input
-        className="border grow rounded-xl px-3 outline-none"
-        placeholder="Send a message to chatbot"
-        size="30"
+        className="border rounded-xl px-3 outline-none min-w-0 flex-1"
+        placeholder="Type your message"
         onChange={saveInputText}
         value={inputText}
         onKeyDown={onKeyDown}
       />
       <button
-        className="bg-green-700 py-4 rounded-lg text-white pointer-cursor hover:bg-green-600 active:bg-green-500 px-6 transition-colors"
+        className="bg-green-700 rounded-lg text-white pointer-cursor hover:bg-green-600 active:bg-green-500 transition-colors py-1.5 px-3 md:px-6 md:py-3"
         onClick={sendMessage}
       >
         Send
       </button>
       <button
-        className="bg-gray-300 py-4 rounded-lg text-black pointer-cursor hover:bg-gray-200 active:bg-gray-100 px-6 transition-colors"
+        className="bg-gray-300 rounded-lg text-black pointer-cursor hover:bg-gray-200 active:bg-gray-100 transition-colors py-1.5 px-3 md:px-6 md:py-3"
         onClick={() => {
           localStorage.removeItem("messages");
           setChatMessage([]);

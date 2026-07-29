@@ -11,7 +11,7 @@ function ChatMessages({ chatMessages }) {
 
   return (
     <section
-      className="space-y-5 grow overflow-scroll [&::-webkit-scrollbar]:hidden"
+      className="space-y-5 grow overflow-scroll [&::-webkit-scrollbar]:hidden mb-2"
       ref={chatMessagesRef}
     >
       {chatMessages.map((chatMessage) => {

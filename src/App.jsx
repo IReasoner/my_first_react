@@ -11,7 +11,7 @@ function App() {
   }, [chatMessages]);
 
   return (
-    <div className="mx-auto max-w-xl flex flex-col h-dvh pb-10 pt-3">
+    <div className="flex flex-col h-dvh px-2 py-3 md:max-w-2xl md:mx-auto md:pb-5">
       {chatMessages.length === 0 ? (
         <p className="text-center text-gray-400">
           Welcome to chatbot project! Send a message using the textbox below

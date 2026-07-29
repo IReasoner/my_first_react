@@ -1,1 +1,17 @@
 @import "tailwindcss";
+
+@utility yellow {
+  @apply border border-amber-400;
+}
+
+@utility red {
+  @apply border border-red-400;
+}
+
+@utility red-1 {
+  @apply border-3 border-red-400;
+}
+
+@utility green {
+  @apply border border-green-400;
+}
