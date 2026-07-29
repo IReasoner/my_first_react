@@ -80,7 +80,7 @@ function ChatInput({ chatMessages, setChatMessage }) {
         onKeyDown={onKeyDown}
       />
       <button
-        className="bg-green-700 rounded-lg text-white pointer-cursor hover:bg-green-600 active:bg-green-500 transition-colors py-1.5 px-3 md:px-6 md:py-3"
+        className="bg-green-700 rounded-lg text-white pointer-cursor hover:bg-green-600 active:bg-green-500 transition-colors py-2.5 px-3 md:px-6 md:py-3"
         onClick={sendMessage}
       >
         Send
