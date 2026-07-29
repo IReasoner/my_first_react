@@ -1,10 +1,12 @@
 import { useEffect, useState } from "react";
 import ChatMessages from "./Components/ChatMessages";
 import ChatInput from "./Components/ChatInput";
+import cancelIcone from "../src/assets/cancel.png";
 
 function App() {
   const messages = JSON.parse(localStorage.getItem("messages")) || [];
   const [chatMessages, setChatMessages] = useState(messages);
+  const [showMenu, setShowMenu] = useState(true);
 
   useEffect(() => {
     localStorage.setItem("messages", JSON.stringify(chatMessages));
@@ -20,8 +22,38 @@ function App() {
         ""
       )}
 
+      {showMenu && (
+        <div className="absolute inset-0 flex justify-center items-center bg-black/20 z-50 backdrop-blur-sm">
+          <div className="bg-gray-300 inline-flex flex-col justify-center items-center shadow-2xl m-auto w-96 p-8 rounded-2xl space-y-2 relative">
+            <h1 className="uppercase text-white font-extrabold text-xl">
+              here are what i can do
+            </h1>
+
+            <button
+              className="absolute top-2 right-2 cursor-pointer"
+              onClick={() => {
+                setShowMenu(false);
+              }}
+            >
+              <img src={cancelIcone} className="w-5" />
+            </button>
+
+            <ul className="list-disc list-inside  marker:text-green-400 text-gray-700 text-base">
+              <li>I can reply a message "hello"</li>
+              <li>I can tell you todays date</li>
+              <li>I can flip a coin</li>
+              <li>I tell you the name of my creator</li>
+            </ul>
+          </div>
+        </div>
+      )}
+
       <ChatMessages chatMessages={chatMessages} />
-      <ChatInput chatMessages={chatMessages} setChatMessage={setChatMessages} />
+      <ChatInput
+        chatMessages={chatMessages}
+        setChatMessage={setChatMessages}
+        setShowMenu={setShowMenu}
+      />
     </div>
   );
 }

@@ -3,7 +3,7 @@ import { Chatbot } from "supersimpledev";
 import dayjs from "dayjs";
 import LoadingIcon from "../assets/icon2.png";
 
-function ChatInput({ chatMessages, setChatMessage }) {
+function ChatInput({ chatMessages, setChatMessage, setShowMenu }) {
   const [inputText, setInputText] = useState("");
   const [isLoading, setIsLoading] = useState(false);
 
@@ -67,7 +67,7 @@ function ChatInput({ chatMessages, setChatMessage }) {
   }
 
   useEffect(() => {
-    Chatbot.addResponses({ ["what is my name"]: "opeyemi" });
+    Chatbot.addResponses({ ["who is your creator"]: "IReasoner" });
   });
 
   return (
@@ -86,10 +86,12 @@ function ChatInput({ chatMessages, setChatMessage }) {
         Send
       </button>
       <button
-        className="bg-gray-300 rounded-lg text-black pointer-cursor hover:bg-gray-200 active:bg-gray-100 transition-colors py-1.5 px-3 md:px-6 md:py-3"
+        className="disabled:bg-gray-200 disabled:cursor-not-allowed disabled:hover:bg-gray-200 bg-gray-300 rounded-lg text-black pointer-cursor hover:bg-gray-200 active:bg-gray-100 transition-colors py-1.5 px-3 md:px-6 md:py-3"
+        disabled={!chatMessages.length && true}
         onClick={() => {
           localStorage.removeItem("messages");
           setChatMessage([]);
+          setShowMenu(true);
         }}
       >
         Clear
