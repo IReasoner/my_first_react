@@ -23,8 +23,8 @@ function App() {
       )}
 
       {showMenu && (
-        <div className="absolute inset-0 flex justify-center items-center bg-black/20 z-50 backdrop-blur-sm">
-          <div className="bg-gray-300 inline-flex flex-col justify-center items-center shadow-2xl m-auto w-96 p-8 rounded-2xl space-y-2 relative">
+        <div className="absolute inset-0 flex justify-center items-center bg-black/20 z-50 backdrop-blur-sm px-4">
+          <div className="bg-gray-300 inline-flex flex-col justify-center items-center shadow-2xl m-auto w-[90%] py-10  rounded-2xl space-y-2 relative text-nowrap md:p-8 md:py-0">
             <h1 className="uppercase text-white font-extrabold text-xl">
               here are what i can do
             </h1>
